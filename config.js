@@ -14,7 +14,7 @@ module.exports = {
   //_________________________________________________________________________________________________________________________________
   ANTILINK_ACTION: process.env.ANTI_LINK || "kick",
   //_________________________________________________________________________________________________________________________________
-  AUTO_REACT: process.env.AUTO_REACT || 'false',
+  AUTO_REACT: process.env.AUTO_REACT || 'true',
   //_________________________________________________________________________________________________________________________________
   AUTO_STATUS_READ: process.env.AUTO_STATUS_READ || 'true',
   //_________________________________________________________________________________________________________________________________
@@ -71,12 +71,12 @@ module.exports = {
   //Database
   DATABASE:
     DATABASE_URL === "./lib/database.db"
-      ? New. Sequelize({
+      ? new. Sequelize({
           dialect: "sqlite",
           storage: DATABASE_URL,
           logging: true,
         })
-      : New.  Sequelize(DATABASE_URL, {
+      : new.  Sequelize(DATABASE_URL, {
           dialect: "postgres",
           ssl: true,
           protocol: "postgres",
